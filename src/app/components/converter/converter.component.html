@@ -1,0 +1,61 @@
+<div *ngIf="exchangeRate.length" class="block-components">
+  <div class="content">
+    <div class="block">
+      <mat-form-field class="example-form-field" style="width: 55%">
+        <mat-label>Кількість одиниць </mat-label>
+        <input
+          matInput
+          type="number"
+          [(ngModel)]="resultOne"
+          (ngModelChange)="resOne($event)"
+        />
+      </mat-form-field>
+      <hr style="background-color: rgb(192, 189, 189); width: 1px; border: 0" />
+      <mat-form-field style="width: 45%">
+        <mat-label>Назва валюти</mat-label>
+        <mat-select
+          [(ngModel)]="selectOne"
+          (ngModelChange)="resultOne && resOne(resultOne)"
+        >
+          <mat-option
+            *ngFor="let food of getAvalibleWells(selectTwo)"
+            [value]="food.txt"
+          >
+            {{ food.txt }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="block">
+      <mat-form-field class="example-form-field" style="width: 55%">
+        <mat-label>Кількість одиниць </mat-label>
+        <input
+          matInput
+          type="number"
+          [(ngModel)]="resultTwo"
+          (ngModelChange)="resTwo()"
+        />
+      </mat-form-field>
+      <hr style="background-color: rgb(192, 189, 189); width: 1px; border: 0" />
+      <mat-form-field style="width: 45%">
+        <mat-label>Назва валюти</mat-label>
+        <mat-select
+          [(ngModel)]="selectTwo"
+          (ngModelChange)="resultTwo && resTwo()"
+        >
+          <mat-option
+            *ngFor="let food of getAvalibleWells(selectOne)"
+            [value]="food.txt"
+          >
+            {{ food.txt }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="spinner" class="spinner">
+  <mat-spinner></mat-spinner>
+</div>

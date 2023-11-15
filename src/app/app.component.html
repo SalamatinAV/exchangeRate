@@ -1,0 +1,33 @@
+<header class="header">
+  <div class="left-menu">
+    <p class="header-text">Курс валют</p>
+    <div class="major-currencies">
+      <p class="currencies" *ngFor="let item of majorCurrencies">
+        1 {{ item.cc }} = {{ item.rate | number : ".1-2" }} UAH
+      </p>
+    </div>
+  </div>
+  <div class="right-menu">
+    <nav>
+      <span>
+        <a
+          href="exchangeRates"
+          class="hover"
+          routerLink="exchangeRates"
+          routerLinkActive="active"
+          >Курс гривні
+        </a>
+      </span>
+      <span>
+        <a href="converter" routerLink="converter" routerLinkActive="active"
+          >Конвертер</a
+        >
+      </span>
+    </nav>
+  </div>
+</header>
+<div class="content">
+  <div class="component">
+    <router-outlet></router-outlet>
+  </div>
+</div>
