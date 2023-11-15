@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "exchange-rate": {
+    "exchangeRate": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/exchange-rate",
+            "outputPath": "dist/exchangeRate",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -66,10 +66,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "exchange-rate:build:production"
+              "browserTarget": "exchangeRate:build:production"
             },
             "development": {
-              "browserTarget": "exchange-rate:build:development"
+              "browserTarget": "exchangeRate:build:development"
             }
           },
           "defaultConfiguration": "development"
